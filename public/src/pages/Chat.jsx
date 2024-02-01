@@ -27,11 +27,10 @@ export default function Chat() {
   }, []);
   useEffect(() => {
     if (currentUser) {
-      socket.current = io(host);
+      socket.current = io("https://snappy-api-phi.vercel.app");
       socket.current.emit("add-user", currentUser._id);
     }
   }, [currentUser]);
-
   useEffect(async () => {
     if (currentUser) {
       if (currentUser.isAvatarImageSet) {
