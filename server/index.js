@@ -11,10 +11,7 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect('mongodb+srv://saraswattabhii:abhishek@cluster0.wf5arwy.mongodb.net/snappy?retryWrites=true&w=majority')
   .then(() => {
     console.log("DB Connetion Successfull");
   })
